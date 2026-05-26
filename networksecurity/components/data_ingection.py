@@ -9,7 +9,7 @@ from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logging.logger import logging
 from networksecurity.entity.config_entity import DataIngestionConfig
 
-from networksecurity.entity.artifact_entity import DataIngestionArtificat
+from networksecurity.entity.artifact_entity import DataIngestionArtifact
 
 
 from dotenv import load_dotenv
@@ -88,7 +88,7 @@ class DataIngestion:
             dataframe = self.export_collection_as_dataframe()
             dataframe = self.export_data_into_feature_store(dataframe)
             self.split_data_as_train_test(dataframe)
-            dataingestionartificat = DataIngestionArtificat(trained_file_path=self.data_ingestion_config.train_file_path,
+            dataingestionartificat = DataIngestionArtifact(trained_file_path=self.data_ingestion_config.train_file_path,
                                                             test_file_path=self.data_ingestion_config.test_file_path)
             
             return dataingestionartificat
