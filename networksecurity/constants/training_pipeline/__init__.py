@@ -1,6 +1,7 @@
 import os
 import sys
 import pandas as pd
+import numpy as np
 from datetime import datetime
 
 """
@@ -37,3 +38,18 @@ DATA_VALIDATION_VALID_NAME: str = 'validation'
 DATA_VALIDATION_INVALID_NAME: str = 'invalid'
 DATA_VALIDATION_DRIFT_NAME: str = 'drift_report'
 DATA_VALIDATION_REPORT_NAME: str = 'report.yaml'
+PREPROCESSING_OBJECT_FILE_NAME: str = 'preprocessing.pkl'
+
+
+"""
+Data transformation related constant start with DATA_TRANSFORMATION var name"""
+
+DATA_TRANSFORMATION_DIR_NAME:str = "data_transfromation"
+DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR:str = "transformed"
+DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR:str = "transformed_object"
+
+DATA_TRANSFORMATION_IMPUTER_PARAMS:dict = {
+    "missing_values": np.nan,
+    "n_neighbors":3,
+    "weights":"uniform",
+}
